@@ -82,7 +82,7 @@ ol {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 16px var(--margin-desktop);
+  padding: 20px var(--margin-desktop);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,6 +134,26 @@ ol {
   opacity: 0.8 !important;
 }
 
+/* ========== BANNER ========== */
+.banner {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--text);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.banner-text {
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+}
+
 
 
 /* Hamburger */
@@ -175,7 +195,7 @@ ol {
 /* ========== LAYOUT ========== */
 .main-content {
   width: 100%;
-  padding-top: 70px;
+  padding-top: 110px;
 }
 
 .container {
@@ -233,46 +253,23 @@ ol {
 }
 
 .hero-line {
-  font-size: clamp(48px, 13vw, 220px);
+  display: block;
+  font-size: clamp(11vh, 25vh, 30vh);
   font-weight: 700;
   line-height: 0.95;
   margin: 0;
   letter-spacing: -0.04em;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 
-.hero-line-text {
-  display: block;
-}
-
-.hero-tagline {
-  font-size: clamp(16px, 2.5vw, 28px);
-  color: var(--muted);
-  margin-top: clamp(16px, 2vw, 32px);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.hero-cta {
-  display: inline-block;
-  margin-top: clamp(20px, 3vw, 40px);
-  font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 700;
-  color: var(--bg);
-  background: var(--text);
-  padding: 14px 32px;
-  transition: opacity 0.3s ease;
-  letter-spacing: 0.02em;
-}
-
-.hero-cta:hover {
-  opacity: 0.8;
+.hero-main-title {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .hero-right {
   width: 35%;
-  max-width: 300px;
 }
 
 .hero-right svg,
@@ -853,13 +850,9 @@ ol {
     color: var(--bg);
   }
 
-  .main-content {
-    padding-top: 60px;
-  }
-
   /* Hero */
   .hero-line {
-    font-size: clamp(40px, 14vw, 120px);
+    font-size: clamp(10vh, 15vh, 20vh);
   }
 
   .hero-right {
@@ -918,7 +911,7 @@ ol {
   }
 
   .hero-line {
-    font-size: clamp(36px, 14vw, 80px);
+    font-size: clamp(8vh, 12vh, 15vh);
   }
 
   .about-content {
@@ -984,9 +977,7 @@ ol {
 
 /* ========== Very narrow / minimized window ========== */
 @media (max-width: 360px) {
-  .hero-line {
-    font-size: clamp(32px, 13vw, 60px);
-  }
+
 
   .page-title {
     font-size: clamp(32px, 10vw, 60px);
