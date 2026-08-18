@@ -1,7 +1,27 @@
-from flask import Flask, render_template, send_from_directory, Response
+from flask import Flask, render_template, send_from_directory, Response, request
 from datetime import datetime
 
 app = Flask(__name__)
+
+
+# ========== PERFORMANCE: Static asset caching ==========
+@app.after_request
+def add_headers(response):
+    """Add caching and security headers to all responses."""
+    # Security headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+
+    # Cache static assets aggressively (CSS, JS, images)
+    if request.path.startswith("/static/"):
+        # Cache static files for 1 year (immutable content)
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    else:
+        # HTML pages: allow caching but revalidate
+        response.headers["Cache-Control"] = "public, max-age=3600, must-revalidate"
+
+    return response
 
 
 @app.route("/")
@@ -54,7 +74,8 @@ def sitemap():
         xml += f'    <priority>{p["priority"]}</priority>\n'
         xml += f'  </url>\n'
     xml += '</urlset>'
-    return Response(xml, mimetype="application/xml")
+    return Response(xml, mimetype="application/xml",
+                    headers={"Cache-Control": "public, max-age=86400"})
 
 
 if __name__ == "__main__":

@@ -42,6 +42,40 @@
   box-sizing: border-box;
 }
 
+/* Screen-reader-only — visible to crawlers, hidden visually */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SEO internal navigation — visible, minimal footer-like links */
+.seo-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: clamp(24px, 4vw, 48px);
+  justify-content: flex-start;
+}
+
+.seo-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.seo-nav a:hover {
+  color: var(--text);
+}
+
 html {
   scroll-behavior: smooth;
   /* Prevent horizontal overflow globally */

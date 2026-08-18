@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="urXEr23ksvT372RUkLcIpW2KxEHNUqUXNPXaGMH1R4c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="Samrudh S Shetty">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="{% block meta_description %}Samrudh S Shetty — Backend developer and CS student specializing in Python, Flask, and AI-powered products. View projects, skills, and get in touch.{% endblock %}">
     <title>{% block title %}Samrudh S Shetty — Backend Developer & AI Builder{% endblock %}</title>
     <link rel="canonical" href="{% block canonical %}https://buildwithsamrudh.xyz/{% endblock %}">
@@ -47,7 +50,23 @@
     }
     </script>
 
+    <!-- WebSite Schema — enables Google sitelinks search box -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Samrudh S Shetty Portfolio",
+      "url": "https://buildwithsamrudh.xyz",
+      "description": "Backend developer and CS student building AI-powered products with Python, Flask, and PostgreSQL.",
+      "author": {
+        "@type": "Person",
+        "name": "Samrudh S Shetty"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     {% block head_scripts %}{% endblock %}
 </head>
 

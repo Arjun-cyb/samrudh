@@ -9,12 +9,45 @@
 {% block tw_description %}Final-year Computer Engineering student focused on backend development, AI product engineering, and data pipelines.{% endblock %}
 
 {% block content %}
+<!-- FAQPage structured data — enables rich FAQ snippets in Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Samrudh S Shetty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Samrudh S Shetty is a final-year Computer and Communication Engineering student who specializes in backend development and AI-powered product engineering. He works with Python, Flask, PostgreSQL, and machine learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What technologies does Samrudh Shetty use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Samrudh works with Python, Java, Flask, Spring Boot, PostgreSQL, MySQL, SQLAlchemy, Docker, REST APIs, and AI/ML tools. He also uses Claude, Cursor, and Codex in his development workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Samrudh Shetty available for hire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Samrudh is currently open to internships, freelance projects, and entry-level roles in AI product backend or backend engineering. You can reach him at samrudh20@outlook.com."
+      }
+    }
+  ]
+}
+</script>
 <section class="section">
     <div class="section-inner">
         <h1 class="page-title reveal">About</h1>
         <p class="page-subtitle reveal">Want to know me?</p>
 
-        <div class="about-content reveal">
+        <article class="about-content reveal">
             <p>
                 Hey, I'm <span class="highlight">Samrudh S Shetty</span>—final year student of Computer and
                 Communication Engineering
@@ -35,7 +68,7 @@
                 features. Currently open to internships or entry-level roles in AI product backend or backend
                 engineering.
             </p>
-        </div>
+        </article>
     </div>
 </section>
 {% endblock %}
