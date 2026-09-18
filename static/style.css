@@ -283,12 +283,11 @@ ol {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow: hidden;
 }
 
 .hero-line {
   display: block;
-  font-size: clamp(11vh, 25vh, 30vh);
+  font-size: clamp(48px, 12vw, 140px);
   font-weight: 700;
   line-height: 0.95;
   margin: 0;
@@ -886,7 +885,7 @@ ol {
 
   /* Hero */
   .hero-line {
-    font-size: clamp(10vh, 15vh, 20vh);
+    font-size: clamp(40px, 12vw, 100px);
   }
 
   .hero-right {
@@ -945,7 +944,7 @@ ol {
   }
 
   .hero-line {
-    font-size: clamp(8vh, 12vh, 15vh);
+    font-size: clamp(36px, 11vw, 80px);
   }
 
   .about-content {

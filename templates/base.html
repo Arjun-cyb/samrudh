@@ -65,7 +65,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
     <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
     {% block head_scripts %}{% endblock %}
 </head>
@@ -110,7 +110,7 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}?v=2"></script>
 </body>
 
 </html>

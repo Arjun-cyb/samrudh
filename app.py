@@ -18,8 +18,10 @@ def add_headers(response):
         # Cache static files for 1 year (immutable content)
         response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
     else:
-        # HTML pages: allow caching but revalidate
-        response.headers["Cache-Control"] = "public, max-age=3600, must-revalidate"
+        # HTML pages: disable caching to force updates
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "-1"
 
     return response
 
